@@ -3,85 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camp Programs | VSB Entertainment</title>
+  <title>Camps | VSB Entertainment</title>
 
   <style>
-    body { margin:0; font-family:Arial; background:#f5f5f5; color:#222; }
-    header, footer { background:#0a2a43; color:white; text-align:center; padding:20px; }
-    nav { background:#0f4c75; text-align:center; padding:12px; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
-    nav a:hover { color:#d9c29c; }
-    .section { max-width:900px; margin:40px auto; background:white; padding:30px;
-               border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.15); }
-    h2 { color:#0f4c75; margin-top:0; }
-  </style>
-</head>
+    :root {
+      --dark-blue: #0a2a43;
+      --mid-blue: #0f4c75;
+      --light-blue: #3282b8;
+      --sand: #d9c29c;
+      --white: #f5f5f5;
+      --grit: #222;
+    }
 
-<body>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--white);
+      color: var(--grit);
+    }
 
-<header>
-  <h1>Camp Programs</h1>
-  <p>Hands‑on RC Experiences for Kids</p>
-</header>
+    header {
+      text-align: center;
+      padding: 25px;
+      background: var(--dark-blue);
+      color: white;
+      border-bottom: 6px solid var(--light-blue);
+    }
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="parties.html">Parties</a>
-  <a href="camps.html">Camps</a>
-  <a href="events.html">Events</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-</nav>
+    nav {
+      background: var(--mid-blue);
+      padding: 12px;
+      text-align: center;
+      border-bottom: 4px solid var(--sand);
+    }
 
-<div class="section">
-  <h2>RC Fun for Camps</h2>
-  <p>We partner with local camps to deliver exciting RC crawling programs that kids love.</p>
-  <p>Our sessions teach coordination, teamwork, and problem‑solving — all while having fun.</p>
-</div>
+    nav a {
+      color: white;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-<div class="section">
-  <h2>Program Options</h2>
-  <ul>
-    <li>Single‑day RC experience</li>
-    <li>Weekly recurring sessions</li>
-    <li>Obstacle course challenges</li>
-    <li>Team competitions</li>
-  </ul>
-  <div class="section">
-  <h2>Camp RC Crawling Experience</h2>
-  <p>
-    VSB Entertainment offers a full <strong>3-hour RC crawling program</strong> designed 
-    specifically for summer camps. We bring <strong>three complete obstacle course setups</strong>, 
-    each offering a different level of challenge and fun so every camper stays engaged.
-  </p>
+    nav a:hover {
+      color: var(--sand);
+    }
 
-  <h3>Beginner Course — Confidence Builder</h3>
-  <p>
-    A smooth, flowing track with wide lanes, gentle hills, and easy turns. Perfect for younger 
-    campers or first-time drivers learning throttle control and steering.
-  </p>
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      border-left: 6px solid var(--light-blue);
+    }
 
-  <h3>Intermediate Course — Skills & Strategy</h3>
-  <p>
-    A more technical layout with tighter turns, small bridges, tunnels, and uneven terrain. 
-    Campers learn problem-solving, teamwork, and how to choose smart driving lines.
-  </p>
+    .section h2 {
+      margin-top: 0;
+      color: var(--mid-blue);
+    }
 
-  <h3>Advanced Course — The Ultimate Challenge</h3>
-  <p>
-    Rock features, steep climbs, narrow bridges, and technical obstacles. Campers love testing 
-    their skills and cheering each other on as they tackle the toughest course.
-  </p>
-
-  <h3>How Our 3-Hour Session Works</h3>
-  <ul>
-   
-
-</div>
-
-<footer>
-  © 2026 VSB Entertainment
-</footer>
-
-</body>
-</html>
+    .section
