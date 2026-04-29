@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VSB Entertainment</title>
+  <title>VSB Entertainment | RC Crawling Parties & Camps</title>
 
   <style>
     :root {
@@ -31,7 +31,7 @@
     }
 
     header img {
-      height: 160px;
+      width: 200px;
       margin-bottom: 10px;
     }
 
@@ -54,22 +54,47 @@
       color: var(--sand);
     }
 
+    /* HERO SECTION */
     .hero {
-      background: linear-gradient(
-        to right,
-        var(--dark-blue),
-        var(--mid-blue),
-        var(--light-blue)
-      );
-      color: white;
-      padding: 90px 20px;
+      background: url('your-hero-image.jpg') center/cover no-repeat;
+      padding: 120px 20px;
       text-align: center;
-      font-size: 22px;
-      letter-spacing: 1px;
+      color: white;
+      background-color: #0a2a43;
     }
 
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px black;
+    }
+
+    .hero p {
+      font-size: 22px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px black;
+    }
+
+    .hero a {
+      background: var(--light-blue);
+      padding: 16px 32px;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 3px solid var(--mid-blue);
+      transition: 0.2s;
+    }
+
+    .hero a:hover {
+      background: var(--mid-blue);
+      transform: scale(1.05);
+    }
+
+    /* SECTION */
     .section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 40px auto;
       background: white;
       padding: 30px;
@@ -83,19 +108,41 @@
       color: var(--mid-blue);
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--mid-blue);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
+    /* PHOTO STRIP */
+    .photo-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 10px;
     }
 
-    .btn:hover {
+    .photo-strip img {
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* FLOATING BUTTON */
+    .floating-book {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
       background: var(--light-blue);
+      color: white;
+      padding: 16px 26px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      border: 3px solid var(--mid-blue);
+      transition: transform 0.2s, background 0.2s;
+      z-index: 9999;
+    }
+
+    .floating-book:hover {
+      background: var(--mid-blue);
+      transform: scale(1.08);
     }
 
     footer {
@@ -111,75 +158,87 @@
 
 <body>
 
-  <header>
-    <img src="FullLogo_NoBuffer (2).jpg" alt="VSB Logo">
-    <h1>VSB Entertainment</h1>
-    <p>RC Crawling • Parties • Camps • Events</p>
-  </header>
+<header>
+  <img src="FullLogo_NoBuffer (2).jpeg" alt="VSB Entertainment Logo">
+  <h1>VSB Entertainment</h1>
+  <p>RC Crawling Parties • Camps • Community Events</p>
+</header>
 
 <nav>
-  <a href="index.html?v=1">Home</a>
-  <a href="parties.html?v=1">Parties</a>
-  <a href="camps.html?v=2026">Camps</a>
-  <a href="events.html?v=1">Events</a>
-  <a href="gallery.html?v=2026">Gallery</a>
-  <a href="contact.html?v=1">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="parties.html">Parties</a>
+  <a href="camps.html">Camps</a>
+  <a href="events.html">Events</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
+<!-- HERO -->
+<div class="hero">
+  <h1>RC Crawling Experiences Kids Love</h1>
+  <p>Birthday Parties • Camps • School Events • Community Programs</p>
+  <a href="booking.html">Book Now</a>
+</div>
 
+<!-- SALES PITCH -->
+<div class="section">
+  <h2>Why Kids (and Parents) Love Our RC Crawling Events</h2>
+  <p>
+    We’ve delivered RC crawling experiences for numerous camps, schools, and community programs —
+    and the response has been incredible. Camps have invited us back year after year because kids
+    stay fully engaged, learn new skills, and have a blast navigating our custom obstacle courses.
+  </p>
+  <p>
+    Our events are hands-on, screen-free, and built to keep kids moving, thinking, and having fun.
+    With multiple RC vehicles, skill-level courses, and a professional setup, every event runs smoothly
+    and delivers unforgettable excitement.
+  </p>
+</div>
 
+<!-- BIRTHDAY PACKAGE -->
+<div class="section">
+  <h2>Birthday Party Package</h2>
 
+  <p><strong>Base Package — $300</strong></p>
+  <ul>
+    <li>2 hours of RC crawling fun</li>
+    <li>Full obstacle course setup</li>
+    <li>Access to multiple RC vehicles</li>
+    <li>Beginner + advanced course options</li>
+  </ul>
 
-  <section class="hero">
-    <h2>Bring the Adventure to You</h2>
-    <p>RC crawling parties and events for kids, camps, and the community.</p>
-    <a class="btn" href="https://www.facebook.com/people/VSB-Entertainment/61555052742708/" target="_blank">
-      Visit Our Facebook Page
-    </a>
-  </section>
+  <p><strong>Additional Time</strong></p>
+  <ul>
+    <li>Extend the fun with 30-minute increments for $70 each</li>
+  </ul>
 
-  <div class="section">
-    <h2>RC Crawling Parties</h2>
-    <p>
-      We bring a full RC crawling course to your location — complete with obstacles,
-      ramps, bridges, and rugged terrain. Perfect for birthdays, block parties,
-      and special events.
-    </p>
-    <p>Fun for kids, exciting for adults, and unforgettable for everyone.</p>
+  <p><strong>Highlights</strong></p>
+  <ul>
+    <li>Hands-on learning with a dedicated kids’ course</li>
+    <li>High-quality RC vehicles with diverse models</li>
+    <li>Professional setup for a smooth, exciting event</li>
+  </ul>
+
+  <a href="booking.html" class="hero-btn">Book Your Party</a>
+</div>
+
+<!-- PHOTO STRIP -->
+<div class="section">
+  <h2>Event Highlights</h2>
+  <div class="photo-strip">
+    <img src="your-photo-1.jpg">
+    <img src="your-photo-2.jpg">
+    <img src="your-photo-3.jpg">
+    <img src="your-photo-4.jpg">
   </div>
+</div>
 
-  <div class="section">
-    <h2>Camp Programs</h2>
-    <p>
-      VSB Entertainment partners with local camps to deliver hands‑on RC experiences.
-      Kids learn control, teamwork, and problem‑solving while having a blast.
-    </p>
-  </div>
+<!-- FLOATING BUTTON -->
+<a class="floating-book" href="booking.html">📅 Book Now</a>
 
-  <div class="section">
-    <h2>Community Events</h2>
-    <p>
-      From school events to township days, we set up interactive RC courses that
-      draw crowds and keep families engaged.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Gallery</h2>
-    <p>Photos coming soon — check out our Facebook page for the latest action shots.</p>
-  </div>
-
-  <div class="section">
-    <h2>Contact & Booking</h2>
-    <p>Ready to book an event or learn more?</p>
-    <a class="btn" href="https://www.facebook.com/people/VSB-Entertainment/61555052742708/" target="_blank">
-      Message Us on Facebook
-    </a>
-  </div>
-
-  <footer>
-    © 2026 VSB Entertainment — RC Crawling • Parties • Camps • Events
-  </footer>
+<footer>
+  © 2026 VSB Entertainment — RC Crawling Parties & Camps
+</footer>
 
 </body>
 </html>
