@@ -20,6 +20,7 @@
       font-family: Arial, sans-serif;
       background: var(--white);
       color: var(--grit);
+      scroll-behavior: smooth;
     }
 
     header {
@@ -28,6 +29,7 @@
       background: var(--dark-blue);
       color: white;
       border-bottom: 6px solid var(--light-blue);
+      animation: fadeIn 1.2s ease;
     }
 
     header img {
@@ -48,31 +50,30 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 18px;
+      transition: 0.3s;
     }
 
     nav a:hover {
       color: var(--sand);
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
-      background: url('your-hero-image.jpg') center/cover no-repeat;
-      padding: 120px 20px;
+      background: #0a2a43;
+      padding: 140px 20px;
       text-align: center;
       color: white;
-      background-color: #0a2a43;
+      animation: fadeInUp 1.2s ease;
     }
 
     .hero h1 {
       font-size: 48px;
       margin-bottom: 10px;
-      text-shadow: 0 0 10px black;
     }
 
     .hero p {
       font-size: 22px;
       margin-bottom: 25px;
-      text-shadow: 0 0 10px black;
     }
 
     .hero a {
@@ -101,6 +102,7 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.15);
       border-left: 6px solid var(--light-blue);
+      animation: fadeIn 1s ease;
     }
 
     .section h2 {
@@ -108,18 +110,79 @@
       color: var(--mid-blue);
     }
 
-    /* PHOTO STRIP */
-    .photo-strip {
+    /* ICON FEATURES */
+    .features {
       display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding: 10px;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
     }
 
-    .photo-strip img {
-      height: 180px;
-      border-radius: 8px;
-      object-fit: cover;
+    .feature-box {
+      width: 200px;
+      padding: 20px;
+      background: #f0f8ff;
+      border-radius: 10px;
+      border: 2px solid var(--light-blue);
+      animation: fadeInUp 1s ease;
+      font-size: 18px;
+    }
+
+    .feature-box span {
+      font-size: 50px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .stat {
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--mid-blue);
+    }
+
+    .stat-label {
+      font-size: 16px;
+      color: var(--grit);
+    }
+
+    /* TESTIMONIALS */
+    .testimonial {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--mid-blue);
+      animation: fadeIn 1s ease;
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 15px;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+      background: #e8f4ff;
+      border-radius: 6px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px;
+      border-left: 4px solid var(--mid-blue);
+      margin-top: 5px;
+      background: #f9f9f9;
     }
 
     /* FLOATING BUTTON */
@@ -153,13 +216,24 @@
       margin-top: 50px;
       border-top: 4px solid var(--light-blue);
     }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <img src="FullLogo_NoBuffer (2).jpeg" alt="VSB Entertainment Logo">
+  <img src="FullLogo_NoBuffer (2).jpg" alt="VSB Entertainment Logo">
   <h1>VSB Entertainment</h1>
   <p>RC Crawling Parties • Camps • Community Events</p>
 </header>
@@ -180,56 +254,89 @@
   <a href="booking.html">Book Now</a>
 </div>
 
-<!-- SALES PITCH -->
+<!-- FEATURES -->
 <div class="section">
-  <h2>Why Kids (and Parents) Love Our RC Crawling Events</h2>
-  <p>
-    We’ve delivered RC crawling experiences for numerous camps, schools, and community programs —
-    and the response has been incredible. Camps have invited us back year after year because kids
-    stay fully engaged, learn new skills, and have a blast navigating our custom obstacle courses.
-  </p>
-  <p>
-    Our events are hands-on, screen-free, and built to keep kids moving, thinking, and having fun.
-    With multiple RC vehicles, skill-level courses, and a professional setup, every event runs smoothly
-    and delivers unforgettable excitement.
-  </p>
+  <h2>Why Choose VSB Entertainment</h2>
+
+  <div class="features">
+    <div class="feature-box">
+      <span>🚚</span>
+      Professional Mobile Setup
+    </div>
+    <div class="feature-box">
+      <span>🚗</span>
+      High-Quality RC Vehicles
+    </div>
+    <div class="feature-box">
+      <span>🧒</span>
+      Kid-Friendly Learning Course
+    </div>
+    <div class="feature-box">
+      <span>🎉</span>
+      Perfect for Parties & Camps
+    </div>
+  </div>
 </div>
 
-<!-- BIRTHDAY PACKAGE -->
+<!-- STATS -->
 <div class="section">
-  <h2>Birthday Party Package</h2>
+  <h2>Our Camp Success</h2>
 
-  <p><strong>Base Package — $300</strong></p>
-  <ul>
-    <li>2 hours of RC crawling fun</li>
-    <li>Full obstacle course setup</li>
-    <li>Access to multiple RC vehicles</li>
-    <li>Beginner + advanced course options</li>
-  </ul>
-
-  <p><strong>Additional Time</strong></p>
-  <ul>
-    <li>Extend the fun with 30-minute increments for $70 each</li>
-  </ul>
-
-  <p><strong>Highlights</strong></p>
-  <ul>
-    <li>Hands-on learning with a dedicated kids’ course</li>
-    <li>High-quality RC vehicles with diverse models</li>
-    <li>Professional setup for a smooth, exciting event</li>
-  </ul>
-
-  <a href="booking.html" class="hero-btn">Book Your Party</a>
+  <div class="stats">
+    <div>
+      <div class="stat">20+</div>
+      <div class="stat-label">Camps Completed</div>
+    </div>
+    <div>
+      <div class="stat">95%</div>
+      <div class="stat-label">Return Requests</div>
+    </div>
+    <div>
+      <div class="stat">500+</div>
+      <div class="stat-label">Kids Reached</div>
+    </div>
+  </div>
 </div>
 
-<!-- PHOTO STRIP -->
+<!-- TESTIMONIALS -->
 <div class="section">
-  <h2>Event Highlights</h2>
-  <div class="photo-strip">
-    <img src="your-photo-1.jpg">
-    <img src="your-photo-2.jpg">
-    <img src="your-photo-3.jpg">
-    <img src="your-photo-4.jpg">
+  <h2>What Parents & Camps Say</h2>
+
+  <div class="testimonial">
+    “The kids were engaged the entire time. One of the best camp activities we’ve ever hosted.”
+  </div>
+
+  <div class="testimonial">
+    “My son said it was the best birthday party he’s ever been to. We’ll definitely be booking again.”
+  </div>
+
+  <div class="testimonial">
+    “Professional setup, great communication, and the kids absolutely loved it.”
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">How much space do you need</div>
+    <div class="faq-answer">A driveway, gym, field, or open indoor space works great.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Do you provide the RC vehicles</div>
+    <div class="faq-answer">Yes — we bring multiple high-quality RC crawlers for all skill levels.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">What ages is this for</div>
+    <div class="faq-answer">Most events are perfect for ages 6–14, but all ages can enjoy.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Do you travel</div>
+    <div class="faq-answer">Yes — we serve Bucks & Montgomery County and surrounding areas.</div>
   </div>
 </div>
 
@@ -239,6 +346,16 @@
 <footer>
   © 2026 VSB Entertainment — RC Crawling Parties & Camps
 </footer>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 
 </body>
 </html>
