@@ -74,6 +74,47 @@
       padding-left: 20px;
     }
 
+    /* Camp Highlights Grid */
+    .camp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .camp-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .camp-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
     footer {
       background: var(--dark-blue);
       color: white;
@@ -93,12 +134,12 @@
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="parties.html">Parties</a>
-  <a href="camps.html">Camps</a>
-  <a href="events.html">Events</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html?v=1">Home</a>
+  <a href="parties.html?v=1">Parties</a>
+  <a href="camps.html?v=1">Camps</a>
+  <a href="events.html?v=1">Events</a>
+  <a href="gallery.html?v=2">Gallery</a>
+  <a href="contact.html?v=1">Contact</a>
 </nav>
 
 <div class="section">
@@ -149,9 +190,40 @@
   </p>
 </div>
 
+<!-- CAMP HIGHLIGHTS GRID -->
+<div class="section">
+  <h2>Camp Highlights</h2>
+  <p>Here are some real moments from our RC crawling camp experiences — obstacle challenges, teamwork, and high‑energy fun.</p>
+
+  <div class="camp-grid">
+    <img src="E9B56A6F-143A-4D8C-9B6C-5BDFA7632F10_4_5005_c.jpeg" onclick="openLightbox(this.src)">
+    <img src="05F6E8CA-CB3A-4DBC-BC70-E9CD91392181_4_5005_c.jpeg" onclick="openLightbox(this.src)">
+    <img src="80BC006E-2D27-4BD6-81DC-3A6FFD432FB8_4_5005_c.jpeg" onclick="openLightbox(this.src)">
+    <img src="422B57DE-A2F4-4555-865F-F19A4B077EF4_4_5005_c.jpeg" onclick="openLightbox(this.src)">
+    <img src="561A3747-6D0B-4FB1-B121-62EF8AFEA0F9_4_5005_c.jpeg" onclick="openLightbox(this.src)">
+    <img src="7E16D234-F942-4194-84F8-322DEDD753B5_4_5005_c.jpeg" onclick="openLightbox(this.src)">
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
 <footer>
   © 2026 VSB Entertainment — RC Crawling • Parties • Camps • Events
 </footer>
+
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 
 </body>
 </html>
