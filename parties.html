@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Parties | VSB Entertainment</title>
+  <title>Birthday Parties | VSB Entertainment</title>
 
   <style>
     :root {
@@ -22,11 +22,17 @@
       color: var(--grit);
     }
 
-    header, footer {
+    header {
+      text-align: center;
+      padding: 25px;
       background: var(--dark-blue);
       color: white;
-      text-align: center;
-      padding: 20px;
+      border-bottom: 6px solid var(--light-blue);
+    }
+
+    header img {
+      width: 180px;
+      margin-bottom: 10px;
     }
 
     nav {
@@ -42,6 +48,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 18px;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -49,7 +56,7 @@
     }
 
     .section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 40px auto;
       background: white;
       padding: 30px;
@@ -58,24 +65,67 @@
       border-left: 6px solid var(--light-blue);
     }
 
-    h2 {
+    .section h2 {
       margin-top: 0;
       color: var(--mid-blue);
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--mid-blue);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
+    ul {
+      margin-left: 20px;
+      line-height: 1.6;
     }
 
-    .btn:hover {
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 15px;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+      background: #e8f4ff;
+      border-radius: 6px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px;
+      border-left: 4px solid var(--mid-blue);
+      margin-top: 5px;
+      background: #f9f9f9;
+    }
+
+    /* Floating Book Now */
+    .floating-book {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
       background: var(--light-blue);
+      color: white;
+      padding: 16px 26px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      border: 3px solid var(--mid-blue);
+      transition: transform 0.2s, background 0.2s;
+      z-index: 9999;
+    }
+
+    .floating-book:hover {
+      background: var(--mid-blue);
+      transform: scale(1.08);
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      border-top: 4px solid var(--light-blue);
     }
   </style>
 </head>
@@ -83,8 +133,8 @@
 <body>
 
 <header>
-  <h1>RC Crawling Parties</h1>
-  <p>We bring the adventure to you</p>
+  <img src="FullLogo_NoBuffer (2).jpg" alt="VSB Entertainment Logo">
+  <h1>Birthday Parties</h1>
 </header>
 
 <nav>
@@ -96,34 +146,133 @@
   <a href="contact.html">Contact</a>
 </nav>
 
+<!-- WHAT IS RC CRAWLING -->
 <div class="section">
-  <h2>Mobile RC Crawling Party Experience</h2>
+  <h2>What Is RC Crawling</h2>
   <p>
-    VSB Entertainment brings a full RC crawling course directly to your location —
-    complete with obstacles, bridges, ramps, and rugged terrain. Perfect for:
+    RC crawling is a hands‑on activity where kids drive hobby‑grade remote‑control trucks 
+    over ramps, bridges, tunnels, hills, and obstacle challenges. Unlike racing, crawling 
+    focuses on control, problem‑solving, and navigating terrain — and kids absolutely love it.
   </p>
-
-  <ul>
-    <li>Birthday parties</li>
-    <li>Block parties</li>
-    <li>School events</li>
-    <li>Community days</li>
-    <li>Family gatherings</li>
-  </ul>
-
   <p>
-    Kids and adults love the challenge, excitement, and hands‑on fun of navigating
-    our custom RC course.
+    It’s active, screen‑free fun that builds confidence, coordination, and teamwork while 
+    keeping kids fully engaged. Our setup includes multiple vehicles and courses so every 
+    child gets plenty of drive time.
   </p>
-
-  <a class="btn" href="https://www.facebook.com/people/VSB-Entertainment/61555052742708/" target="_blank">
-    Message Us to Book
-  </a>
 </div>
 
+<!-- PARTY INTRO -->
+<div class="section">
+  <h2>RC Crawling Birthday Parties</h2>
+  <p>
+    Make your child’s birthday unforgettable with a high‑energy, hands‑on RC crawling experience. 
+    We bring the excitement directly to you with professional equipment, multiple RC vehicles, 
+    and a full obstacle course setup that keeps kids engaged from start to finish.
+  </p>
+</div>
+
+<!-- PRICING -->
+<div class="section">
+  <h2>Party Package & Pricing</h2>
+
+  <p><strong>Base Package — $300</strong></p>
+  <ul>
+    <li>2 hours of RC crawling fun</li>
+    <li>Full obstacle course setup</li>
+    <li>Access to multiple RC vehicles</li>
+    <li>Beginner + advanced course options</li>
+  </ul>
+
+  <p><strong>Additional Time</strong></p>
+  <ul>
+    <li>Extend the fun with 30‑minute increments for <strong>$70 each</strong></li>
+  </ul>
+</div>
+
+<!-- HIGHLIGHTS -->
+<div class="section">
+  <h2>What’s Included</h2>
+  <ul>
+    <li>Hands‑on learning with a dedicated kids’ course</li>
+    <li>High‑quality RC vehicles with diverse models</li>
+    <li>Professional setup for a smooth, exciting event</li>
+    <li>Perfect for ages 6–14 (but fun for all ages)</li>
+    <li>We come to your home, park, gym, or event space</li>
+  </ul>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">How much space do you need</div>
+    <div class="faq-answer">A driveway, gym, field, basement, or open indoor space works great.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Do you provide the RC vehicles</div>
+    <div class="faq-answer">Yes — we bring multiple high‑quality RC crawlers for all skill levels.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">What ages is this best for</div>
+    <div class="faq-answer">Most parties are perfect for ages 6–14, but all ages can enjoy.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Do you travel</div>
+    <div class="faq-answer">Yes — we serve Bucks & Montgomery County and surrounding areas.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">How many kids can participate</div>
+    <div class="faq-answer">We can comfortably handle groups of 8–20 kids with rotations.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Is the event supervised</div>
+    <div class="faq-answer">Yes — we run the entire event, guide the kids, and keep everything safe.</div>
+  </div>
+
+</div>
+
+<!-- CALL TO ACTION -->
+<div class="section">
+  <h2>Ready to Book Your Party</h2>
+  <p>
+    Our party dates fill quickly — secure your spot today and give your child a birthday 
+    experience they’ll talk about for weeks.
+  </p>
+  <a href="booking.html" style="
+    background: var(--light-blue);
+    padding: 14px 28px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 3px solid var(--mid-blue);
+    display: inline-block;
+  ">Book Now</a>
+</div>
+
+<!-- FLOATING BUTTON -->
+<a class="floating-book" href="booking.html">📅 Book Now</a>
+
 <footer>
-  © 2026 VSB Entertainment
+  © 2026 VSB Entertainment — RC Crawling Parties & Camps
 </footer>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 
 </body>
 </html>
