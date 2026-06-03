@@ -86,10 +86,66 @@
       color: var(--mid-blue);
     }
 
+    /* Upcoming Events Box */
+    .upcoming-box {
+      background: #fff7e0;
+      padding: 18px;
+      border-left: 5px solid var(--event-border);
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .upcoming-box h3 {
+      margin-top: 0;
+      color: var(--mid-blue);
+    }
+
+    .upcoming-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .upcoming-box li {
+      margin-bottom: 6px;
+      font-size: 17px;
+    }
+
+    /* Month Header */
+    .month-header {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: var(--mid-blue);
+    }
+
+    /* Navigation Buttons */
+    .nav-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .nav-buttons button {
+      background: var(--mid-blue);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .nav-buttons button:hover {
+      background: var(--light-blue);
+    }
+
+    /* Calendar */
     .calendar {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 25px;
+      margin-bottom: 40px;
     }
 
     .calendar th {
@@ -122,14 +178,27 @@
       color: #000;
     }
 
-    .month-header {
-      text-align: center;
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      color: var(--mid-blue);
+    /* Tooltip */
+    .tooltip {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--mid-blue);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      display: none;
+      z-index: 10;
     }
 
+    .event-day:hover .tooltip {
+      display: block;
+    }
+
+    /* Booking Preview */
     .preview-box {
       background: #f0f8ff;
       padding: 20px;
@@ -143,6 +212,7 @@
       color: var(--mid-blue);
     }
 
+    /* Floating Book Button */
     .floating-book {
       position: fixed;
       bottom: 25px;
@@ -231,19 +301,21 @@
 
 <div class="section">
   <h2>Upcoming Events</h2>
-  <p>Tap any date to auto-fill the booking form. Blocked dates show scheduled events.</p>
 
-  <div class="month-header" id="monthHeader"></div>
+  <!-- Upcoming Events List -->
+  <div class="upcoming-box">
+    <h3>Upcoming Events</h3>
+    <ul id="upcomingList"></ul>
+  </div>
 
-  <table class="calendar" id="calendarTable">
-    <thead>
-      <tr>
-        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
-        <th>Thu</th><th>Fri</th><th>Sat</th>
-      </tr>
-    </thead>
-    <tbody id="calendarBody"></tbody>
-  </table>
+  <!-- Navigation -->
+  <div class="nav-buttons">
+    <button onclick="prevWindow()">◀ Previous</button>
+    <button onclick="nextWindow()">Next ▶</button>
+  </div>
+
+  <!-- Multi-Month Calendar Container -->
+  <div id="calendarContainer"></div>
 
   <div class="preview-box">
     <h3>Booking Form Preview</h3>
@@ -279,22 +351,57 @@
     }
   ];
 
-  const date = new Date();
-  const monthHeader = document.getElementById("monthHeader");
-  const calendarBody = document.getElementById("calendarBody");
+  let windowStart = new Date(); // first month in the 3-month window
+
   const selectedDateSpan = document.getElementById("selectedDate");
+  const upcomingList = document.getElementById("upcomingList");
+  const calendarContainer = document.getElementById("calendarContainer");
 
-  function generateCalendar() {
-    const year = date.getFullYear();
-    const month = date.getMonth();
+  function generateUpcomingList() {
+    upcomingList.innerHTML = "";
 
-    monthHeader.textContent = 
-      date.toLocaleString("default", { month: "long" }) + " " + year;
+    events.forEach(e => {
+      const d = new Date(e.date);
+      const formatted = d.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      });
+
+      const li = document.createElement("li");
+      li.textContent = `${formatted} — ${e.title}`;
+      upcomingList.appendChild(li);
+    });
+  }
+
+  function buildMonth(year, month) {
+    const wrapper = document.createElement("div");
+
+    const header = document.createElement("div");
+    header.className = "month-header";
+    header.textContent = new Date(year, month).toLocaleString("default", {
+      month: "long",
+      year: "numeric"
+    });
+
+    const table = document.createElement("table");
+    table.className = "calendar";
+
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+          <th>Thu</th><th>Fri</th><th>Sat</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
+
+    const body = table.querySelector("tbody");
 
     const firstDay = new Date(year, month, 1).getDay();
     const totalDays = new Date(year, month + 1, 0).getDate();
 
-    calendarBody.innerHTML = "";
     let row = document.createElement("tr");
 
     for (let i = 0; i < firstDay; i++) {
@@ -310,6 +417,12 @@
 
       if (event) {
         cell.classList.add("event-day");
+
+        const tooltip = document.createElement("div");
+        tooltip.className = "tooltip";
+        tooltip.textContent = event.title;
+        cell.appendChild(tooltip);
+
         cell.onclick = () => openPopup(event);
       } else {
         cell.onclick = () => {
@@ -322,12 +435,41 @@
       row.appendChild(cell);
 
       if ((firstDay + day) % 7 === 0) {
-        calendarBody.appendChild(row);
+        body.appendChild(row);
         row = document.createElement("tr");
       }
     }
 
-    calendarBody.appendChild(row);
+    body.appendChild(row);
+
+    wrapper.appendChild(header);
+    wrapper.appendChild(table);
+
+    return wrapper;
+  }
+
+  function renderWindow() {
+    calendarContainer.innerHTML = "";
+
+    const startYear = windowStart.getFullYear();
+    const startMonth = windowStart.getMonth();
+
+    for (let i = 0; i < 3; i++) {
+      const monthDate = new Date(startYear, startMonth + i);
+      calendarContainer.appendChild(
+        buildMonth(monthDate.getFullYear(), monthDate.getMonth())
+      );
+    }
+  }
+
+  function prevWindow() {
+    windowStart.setMonth(windowStart.getMonth() - 3);
+    renderWindow();
+  }
+
+  function nextWindow() {
+    windowStart.setMonth(windowStart.getMonth() + 3);
+    renderWindow();
   }
 
   function openPopup(event) {
@@ -340,7 +482,8 @@
     document.getElementById("eventPopup").style.display = "none";
   }
 
-  generateCalendar();
+  generateUpcomingList();
+  renderWindow();
 </script>
 
 </body>
