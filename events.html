@@ -86,30 +86,6 @@
       color: var(--mid-blue);
     }
 
-    /* Upcoming Events Box */
-    .upcoming-box {
-      background: #fff7e0;
-      padding: 18px;
-      border-left: 5px solid var(--event-border);
-      border-radius: 8px;
-      margin-bottom: 25px;
-    }
-
-    .upcoming-box h3 {
-      margin-top: 0;
-      color: var(--mid-blue);
-    }
-
-    .upcoming-box ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .upcoming-box li {
-      margin-bottom: 6px;
-      font-size: 17px;
-    }
-
     /* Month Header */
     .month-header {
       text-align: center;
@@ -300,12 +276,6 @@
 </div>
 
 <div class="section">
-  <h2>Upcoming Events</h2>
-
-  <div class="upcoming-box">
-    <h3>Upcoming Events</h3>
-    <ul id="upcomingList"></ul>
-  </div>
 
   <div class="nav-buttons">
     <button onclick="prevWindow()">◀ Previous</button>
@@ -350,25 +320,7 @@
   let windowStart = new Date();
 
   const selectedDateSpan = document.getElementById("selectedDate");
-  const upcomingList = document.getElementById("upcomingList");
   const calendarContainer = document.getElementById("calendarContainer");
-
-  function generateUpcomingList() {
-    upcomingList.innerHTML = "";
-
-    events.forEach(e => {
-      const d = new Date(e.date);
-      const formatted = d.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric"
-      });
-
-      const li = document.createElement("li");
-      li.textContent = `${formatted} — ${e.title}`;
-      upcomingList.appendChild(li);
-    });
-  }
 
   function buildMonth(year, month) {
     const wrapper = document.createElement("div");
@@ -478,7 +430,6 @@
     document.getElementById("eventPopup").style.display = "none";
   }
 
-  generateUpcomingList();
   renderWindow();
 </script>
 
