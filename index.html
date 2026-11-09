@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VSB Entertainment | RC Crawling Parties & Camps</title>
+  <title>RC Crawling Birthday Parties & Camps in Bucks County, PA | VSB Entertainment</title>
+  <meta name="description" content="Mobile RC crawling birthday parties, summer camp programs and school STEM events in Bucks & Montgomery County, PA. We bring the trucks and obstacle courses. Parties from $300." />
+  <link rel="canonical" href="https://vsbcrawling.github.io/" />
+  <link rel="icon" href="logo-192.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VSB Entertainment" />
+  <meta property="og:title" content="RC Crawling Birthday Parties & Camps in Bucks County, PA | VSB Entertainment" />
+  <meta property="og:description" content="Mobile RC crawling birthday parties, summer camp programs and school STEM events in Bucks & Montgomery County, PA. We bring the trucks and obstacle courses. Parties from $300." />
+  <meta property="og:url" content="https://vsbcrawling.github.io/" />
+  <meta property="og:image" content="https://vsbcrawling.github.io/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <style>
     :root {
@@ -59,7 +69,7 @@
 
     /* HERO */
     .hero {
-      background: #0a2a43;
+      background: linear-gradient(rgba(10,42,67,0.78), rgba(10,42,67,0.78)), url("og-image.jpg") center / cover no-repeat, #0a2a43;
       padding: 140px 20px;
       text-align: center;
       color: white;
@@ -227,14 +237,46 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Mobile + shared fixes */
+    *, *::before, *::after { box-sizing: border-box; }
+    img { max-width: 100%; height: auto; }
+    .cta-btn {
+      display: inline-block; background: #ff9900; color: #fff; padding: 14px 28px;
+      font-size: 20px; font-weight: bold; border-radius: 10px; text-decoration: none;
+    }
+    .cta-btn:hover { background: #e68a00; }
+    @media (max-width: 600px) {
+      header { padding: 14px 12px; }
+      header img { width: 110px !important; height: auto; margin-bottom: 4px; }
+      header h1 { font-size: 26px; margin: 6px 0; }
+      nav { padding: 8px 4px; display: flex; flex-wrap: wrap; justify-content: center; }
+      nav a { margin: 4px 10px; font-size: 16px; }
+      .hero { padding: 48px 16px !important; }
+      .hero h1 { font-size: 32px !important; }
+      .hero p { font-size: 18px !important; }
+      .section { margin: 20px 12px !important; padding: 20px 16px !important; }
+      .stats { flex-wrap: wrap; gap: 16px; }
+      .floating-book { bottom: 14px !important; right: 14px !important; padding: 12px 18px !important; font-size: 17px !important; }
+      .calendar td { height: 52px !important; padding: 4px !important; font-size: 14px !important; }
+      .calendar th { padding: 6px 2px !important; font-size: 13px !important; }
+      .banner-cta { font-size: 17px !important; padding: 14px 12px !important; }
+      .vsb-announcement { margin: 20px 12px !important; padding: 20px 14px !important; }
+      .vsb-announcement h2 { font-size: 1.5rem !important; }
+      .vsb-announcement p { font-size: 1.05rem !important; }
+      .booking-container { margin: 12px !important; padding: 18px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <img src="FullLogo_NoBuffer (2).jpg" alt="VSB Entertainment Logo">
-  <h1>VSB Entertainment</h1>
+  <img src="logo.jpg" width="200" height="185" alt="VSB Entertainment Logo">
+  <p style="font-size:28px;font-weight:bold;margin:8px 0;">VSB Entertainment</p>
   <p>RC Crawling Parties • Camps • Community Events</p>
 </header>
 
@@ -249,9 +291,10 @@
 
 <!-- HERO -->
 <div class="hero">
-  <h1>RC Crawling Experiences Kids Love</h1>
-  <p>Birthday Parties • Camps • School Events • Community Programs</p>
-  <a href="booking.html">Book Now</a>
+  <h1>RC Crawling Parties &amp; Camps Kids Love</h1>
+  <p>We bring the trucks and obstacle courses to you, anywhere in Bucks &amp; Montgomery County, PA.</p>
+  <p style="font-size:18px;"><strong>Birthday parties from $300</strong> • Camps • School STEM events</p>
+  <a href="booking.html">Check Available Dates</a>
 </div>
 
 <!-- FEATURES -->
@@ -315,27 +358,34 @@
   </div>
 </div>
 
+<div class="section" style="text-align:center;">
+  <h2>Book Your Party or Camp Day</h2>
+  <p>Birthday parties start at <strong>$300 for 2 hours</strong>. Camps, schools and community groups: ask us about a custom program.</p>
+  <a class="cta-btn" href="booking.html">Request a Date</a>
+  <p style="margin-top:14px;">Questions? Email <a href="mailto:vsbcrawling@yahoo.com">vsbcrawling@yahoo.com</a></p>
+</div>
+
 <!-- FAQ -->
 <div class="section">
   <h2>Frequently Asked Questions</h2>
 
   <div class="faq-item">
-    <div class="faq-question">How much space do you need</div>
+    <div class="faq-question">How much space do you need?</div>
     <div class="faq-answer">A driveway, gym, field, or open indoor space works great.</div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">Do you provide the RC vehicles</div>
+    <div class="faq-question">Do you provide the RC vehicles?</div>
     <div class="faq-answer">Yes — we bring multiple high-quality RC crawlers for all skill levels.</div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">What ages is this for</div>
+    <div class="faq-question">What ages is this for?</div>
     <div class="faq-answer">Most events are perfect for ages 6–14, but all ages can enjoy.</div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">Do you travel</div>
+    <div class="faq-question">Do you travel?</div>
     <div class="faq-answer">Yes — we serve Bucks & Montgomery County and surrounding areas.</div>
   </div>
 </div>
@@ -344,7 +394,8 @@
 <a class="floating-book" href="booking.html">📅 Book Now</a>
 
 <footer>
-  © 2026 VSB Entertainment — RC Crawling Parties & Camps
+  © 2026 VSB Entertainment — RC Crawling Parties &amp; Camps<br>
+  Serving Bucks &amp; Montgomery County, PA • <a href="mailto:vsbcrawling@yahoo.com" style="color:white;">vsbcrawling@yahoo.com</a>
 </footer>
 
 <script>
@@ -356,13 +407,25 @@
     });
   });
 </script>
-<script>
-fetch("https://api.countapi.xyz/hit/vsb-entertainment/homepage")
-  .then(res => res.json())
-  .then(data => {
-    console.log("Homepage views:", data.value);
-    document.getElementById("pageViews").textContent = data.value;
-  });
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "VSB Entertainment",
+  "alternateName": "VSB RC Crawling",
+  "description": "Mobile RC crawling birthday parties, summer camp programs, and school STEM events.",
+  "url": "https://vsbcrawling.github.io/",
+  "logo": "https://vsbcrawling.github.io/logo.jpg",
+  "image": "https://vsbcrawling.github.io/og-image.jpg",
+  "email": "vsbcrawling@yahoo.com",
+  "priceRange": "$300+",
+  "address": { "@type": "PostalAddress", "addressRegion": "PA", "addressCountry": "US" },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Bucks County, PA" },
+    { "@type": "AdministrativeArea", "name": "Montgomery County, PA" }
+  ],
+  "sameAs": ["https://www.facebook.com/profile.php?id=61555052742708"]
+}
 </script>
 
 </body>

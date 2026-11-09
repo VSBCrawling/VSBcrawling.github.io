@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events | VSB Entertainment</title>
+  <title>RC Crawling Events Calendar & Availability | VSB Entertainment</title>
+  <meta name="description" content="See upcoming VSB Entertainment RC crawling events and check open dates for birthday parties, camps, school and community events in Bucks County, PA." />
+  <link rel="canonical" href="https://vsbcrawling.github.io/events.html" />
+  <link rel="icon" href="logo-192.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VSB Entertainment" />
+  <meta property="og:title" content="RC Crawling Events Calendar & Availability | VSB Entertainment" />
+  <meta property="og:description" content="See upcoming VSB Entertainment RC crawling events and check open dates for birthday parties, camps, school and community events in Bucks County, PA." />
+  <meta property="og:url" content="https://vsbcrawling.github.io/events.html" />
+  <meta property="og:image" content="https://vsbcrawling.github.io/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <style>
     :root {
@@ -56,6 +66,7 @@
       color: var(--sand);
     }
 
+    .banner-cta a { color: #fff; }
     .banner-cta {
       background: var(--light-blue);
       color: white;
@@ -245,24 +256,57 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
+    /* Mobile + shared fixes */
+    *, *::before, *::after { box-sizing: border-box; }
+    img { max-width: 100%; height: auto; }
+    .cta-btn {
+      display: inline-block; background: #ff9900; color: #fff; padding: 14px 28px;
+      font-size: 20px; font-weight: bold; border-radius: 10px; text-decoration: none;
+    }
+    .cta-btn:hover { background: #e68a00; }
+    @media (max-width: 600px) {
+      header { padding: 14px 12px; }
+      header img { width: 110px !important; height: auto; margin-bottom: 4px; }
+      header h1 { font-size: 26px; margin: 6px 0; }
+      nav { padding: 8px 4px; display: flex; flex-wrap: wrap; justify-content: center; }
+      nav a { margin: 4px 10px; font-size: 16px; }
+      .hero { padding: 48px 16px !important; }
+      .hero h1 { font-size: 32px !important; }
+      .hero p { font-size: 18px !important; }
+      .section { margin: 20px 12px !important; padding: 20px 16px !important; }
+      .stats { flex-wrap: wrap; gap: 16px; }
+      .floating-book { bottom: 14px !important; right: 14px !important; padding: 12px 18px !important; font-size: 17px !important; }
+      .calendar td { height: 52px !important; padding: 4px !important; font-size: 14px !important; }
+      .calendar th { padding: 6px 2px !important; font-size: 13px !important; }
+      .banner-cta a { color: #fff; }
+    .banner-cta { font-size: 17px !important; padding: 14px 12px !important; }
+      .vsb-announcement { margin: 20px 12px !important; padding: 20px 14px !important; }
+      .vsb-announcement h2 { font-size: 1.5rem !important; }
+      .vsb-announcement p { font-size: 1.05rem !important; }
+      .booking-container { margin: 12px !important; padding: 18px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <img src="FullLogo_NoBuffer (2).jpg" alt="VSB Entertainment Logo">
+  <img src="logo.jpg" width="200" height="185" alt="VSB Entertainment Logo">
   <h1>Community Events</h1>
   <p>RC Crawling • Fundraisers • Community Programs</p>
 </header>
 
 <nav>
-  <a href="index.html?v=4">Home</a>
-  <a href="parties.html?v=4">Parties</a>
-  <a href="camps.html?v=4">Camps</a>
-  <a href="events.html?v=4">Events</a>
-  <a href="gallery.html?v=4">Gallery</a>
-  <a href="contact.html?v=4">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="parties.html">Parties</a>
+  <a href="camps.html">Camps</a>
+  <a href="events.html">Events</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <!-- ⭐ NEW UPCOMING EVENTS BANNER -->
@@ -275,12 +319,13 @@
   font-weight: bold;
   border-bottom: 4px solid #0f4c75;
 ">
-  Upcoming Events — 9/16/2026 STEAM Class located in Warrington PA Twp Rec Center — More details to follow soon!
+  Upcoming: RC Crawling Class with Warrington Township on Thursday, November 19! <a href="https://warringtonpa.myrec.com/info/activities/program_details.aspx?ProgramID=30160" target="_blank" rel="noopener">Sign up here</a><br>
+  <span style="font-size:16px;font-weight:normal;">Also now booking winter birthday parties and 2027 summer camps.</span>
 </div>
 
 <div class="banner-cta">
   Ready to book your event?  
-  <a href="booking.html?v=4">Click here to reserve your date</a>
+  <a href="booking.html">Click here to reserve your date</a>
 </div>
 
 <div class="section">
@@ -295,11 +340,11 @@
   <div class="preview-box">
     <h3>Booking Form Preview</h3>
     <p><strong>Selected Date:</strong> <span id="selectedDate">None</span></p>
-    <a href="booking.html?v=4" class="book-btn">Go to Full Booking Form</a>
+    <a href="booking.html" class="cta-btn">Go to Full Booking Form</a>
   </div>
 </div>
 
-<a class="floating-book" href="booking.html?v=4">📅 Book Now</a>
+<a class="floating-book" href="booking.html">📅 Book Now</a>
 
 <footer>
   © 2026 VSB Entertainment — RC Crawling • Parties • Camps • Events
@@ -308,6 +353,7 @@
 <div class="event-popup" id="eventPopup">
   <h3 id="popupTitle"></h3>
   <p id="popupDesc"></p>
+  <p><a id="popupLink" href="#" target="_blank" rel="noopener" style="display:none;font-weight:bold;">Sign up for this class</a></p>
   <button onclick="closePopup()">Close</button>
 </div>
 
@@ -317,6 +363,12 @@
       date: "2026-08-04",
       title: "Day Camp",
       description: "Full-day camp event"
+    },
+    {
+      date: "2026-11-19",
+      title: "RC Crawling Class with Warrington Township",
+      description: "RC crawling class held with Warrington Township, PA. Register through Warrington Township Parks & Rec.",
+      link: "https://warringtonpa.myrec.com/info/activities/program_details.aspx?ProgramID=30160"
     },
     {
       date: "2026-09-16",
@@ -384,7 +436,7 @@
         cell.onclick = () => {
           const fullDate = `${month + 1}/${day}/${year}`;
           selectedDateSpan.textContent = fullDate;
-          window.location.href = `booking.html?v=4&date=${encodeURIComponent(fullDate)}`;
+          window.location.href = `booking.html?date=${encodeURIComponent(dateStr)}`;
         };
       }
 
@@ -431,6 +483,8 @@
   function openPopup(event) {
     document.getElementById("popupTitle").innerText = event.title;
     document.getElementById("popupDesc").innerText = event.description;
+    const link = document.getElementById("popupLink");
+    if (event.link) { link.href = event.link; link.style.display = "inline"; } else { link.style.display = "none"; }
     document.getElementById("eventPopup").style.display = "block";
   }
 
