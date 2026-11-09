@@ -319,7 +319,8 @@
   font-weight: bold;
   border-bottom: 4px solid #0f4c75;
 ">
-  Upcoming: RC Crawling Class with Warrington Township on Thursday, November 19! Also now booking winter birthday parties and 2027 summer camps.
+  Upcoming: RC Crawling Class with Warrington Township on Thursday, November 19! <a href="https://warringtonpa.myrec.com/info/activities/program_details.aspx?ProgramID=30160" target="_blank" rel="noopener">Sign up here</a><br>
+  <span style="font-size:16px;font-weight:normal;">Also now booking winter birthday parties and 2027 summer camps.</span>
 </div>
 
 <div class="banner-cta">
@@ -352,6 +353,7 @@
 <div class="event-popup" id="eventPopup">
   <h3 id="popupTitle"></h3>
   <p id="popupDesc"></p>
+  <p><a id="popupLink" href="#" target="_blank" rel="noopener" style="display:none;font-weight:bold;">Sign up for this class</a></p>
   <button onclick="closePopup()">Close</button>
 </div>
 
@@ -365,7 +367,8 @@
     {
       date: "2026-11-19",
       title: "RC Crawling Class with Warrington Township",
-      description: "RC crawling class held with Warrington Township, PA"
+      description: "RC crawling class held with Warrington Township, PA. Register through Warrington Township Parks & Rec.",
+      link: "https://warringtonpa.myrec.com/info/activities/program_details.aspx?ProgramID=30160"
     },
     {
       date: "2026-09-16",
@@ -480,6 +483,8 @@
   function openPopup(event) {
     document.getElementById("popupTitle").innerText = event.title;
     document.getElementById("popupDesc").innerText = event.description;
+    const link = document.getElementById("popupLink");
+    if (event.link) { link.href = event.link; link.style.display = "inline"; } else { link.style.display = "none"; }
     document.getElementById("eventPopup").style.display = "block";
   }
 
