@@ -219,13 +219,9 @@
   </div>
 
   <div class="booking-container">
-    <form action="https://formsubmit.co/vsb_crawling@yahoo.com" method="POST">
-      <!-- Sends each request to the business email (GitHub Pages can't receive forms itself) -->
-      <input type="hidden" name="_subject" value="New VSB booking request!">
-      <input type="hidden" name="_next" value="https://vsbcrawling.github.io/file.html">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <!-- Opens the visitor's email app with the booking filled in, addressed to the business
+         (GitHub Pages can't receive forms, and FormSubmit's activation email never reached Yahoo) -->
+    <form id="bookingForm">
 
       <label for="eventDate">Event Date</label>
       <input type="date" id="eventDate" name="eventDate" required>
@@ -258,7 +254,11 @@
       <label for="details">Additional Details</label>
       <textarea id="details" name="details" placeholder="Tell us anything we should know..."></textarea>
 
-      <button type="submit" class="submit-btn">Submit Booking Request</button>
+      <button type="submit" class="submit-btn">Send Booking Request</button>
+      <div id="sentNote" style="display:none;margin-top:18px;padding:16px;background:#e8f7e8;border:2px solid #4caf50;border-radius:8px;text-align:center;">
+        <strong>Almost done! Your email app should now be open with your request filled in. Just press Send.</strong><br>
+        If nothing opened, email us at <a href="mailto:vsb_crawling@yahoo.com">vsb_crawling@yahoo.com</a>.
+      </div>
       <p style="text-align:center;color:#555;">We typically reply within a few hours. Prefer email? <a href="mailto:vsb_crawling@yahoo.com">vsb_crawling@yahoo.com</a></p>
     </form>
   </div>
@@ -276,6 +276,31 @@
       const us = d.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
       dateInput.value = us ? `${us[3]}-${us[1].padStart(2,"0")}-${us[2].padStart(2,"0")}` : d;
     }
+
+    // Build an email with the booking details and open the visitor's email app
+    document.getElementById("bookingForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = e.target;
+      const v = (id) => (f.querySelector("#" + id).value || "").trim();
+      const body = [
+        "Hi VSB! I'd like to book an event.",
+        "",
+        "Event date: " + v("eventDate"),
+        "Event type: " + v("eventType"),
+        "Location: " + v("location"),
+        "Number of kids: " + (v("kids") || "not sure yet"),
+        "",
+        "Name: " + v("name"),
+        "Email: " + v("email"),
+        "Phone: " + v("phone"),
+        "",
+        "Details: " + (v("details") || "-")
+      ].join("\n");
+      const subject = "Booking request: " + v("eventType") + " on " + v("eventDate");
+      window.location.href = "mailto:vsb_crawling@yahoo.com?subject=" +
+        encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      document.getElementById("sentNote").style.display = "block";
+    });
   </script>
 
 </body>
