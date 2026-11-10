@@ -180,19 +180,6 @@
       display: block;
     }
 
-    /* Booking Preview */
-    .preview-box {
-      background: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 5px solid var(--mid-blue);
-      margin-top: 25px;
-    }
-
-    .preview-box h3 {
-      margin-top: 0;
-      color: var(--mid-blue);
-    }
 
     /* Floating Book Button */
     .floating-book {
@@ -341,11 +328,6 @@
 
   <div id="calendarContainer"></div>
 
-  <div class="preview-box">
-    <h3>Booking Form Preview</h3>
-    <p><strong>Selected Date:</strong> <span id="selectedDate">None</span></p>
-    <a href="booking.html" class="cta-btn">Go to Full Booking Form</a>
-  </div>
 </div>
 
 <a class="floating-book" href="booking.html">🚙 Book the Fun!</a>
@@ -439,7 +421,7 @@
       } else {
         cell.onclick = () => {
           const fullDate = `${month + 1}/${day}/${year}`;
-          selectedDateSpan.textContent = fullDate;
+          if (selectedDateSpan) selectedDateSpan.textContent = fullDate;
           window.location.href = `booking.html?date=${encodeURIComponent(dateStr)}`;
         };
       }
@@ -499,5 +481,6 @@
   renderWindow();
 </script>
 
+<script data-goatcounter="https://vsbcrawling.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
