@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is RC Crawling? A Parent's Guide | VSB Entertainment</title>
+  <meta name="description" content="New to RC crawling? RC means remote control. Kids drive small off-road trucks slowly over rocks, ramps and bridges. Here is how it works and why kids love it." />
+  <link rel="canonical" href="https://vsbcrawling.github.io/what-is-rc-crawling.html" />
+  <link rel="icon" href="logo-192.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VSB Entertainment" />
+  <meta property="og:title" content="What Is RC Crawling? A Parent's Guide | VSB Entertainment" />
+  <meta property="og:description" content="New to RC crawling? RC means remote control. Kids drive small off-road trucks slowly over rocks, ramps and bridges. Here is how it works and why kids love it." />
+  <meta property="og:url" content="https://vsbcrawling.github.io/what-is-rc-crawling.html" />
+  <meta property="og:image" content="https://vsbcrawling.github.io/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --dark-blue: #0a2a43;
+      --mid-blue: #0f4c75;
+      --light-blue: #3282b8;
+      --sand: #d9c29c;
+      --white: #f5f5f5;
+      --grit: #222;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--white);
+      color: var(--grit);
+    }
+
+    header {
+      text-align: center;
+      padding: 25px;
+      background: var(--dark-blue);
+      color: white;
+      border-bottom: 6px solid var(--light-blue);
+    }
+
+    header img {
+      width: 180px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background: var(--mid-blue);
+      padding: 12px;
+      text-align: center;
+      border-bottom: 4px solid var(--sand);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--sand);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      border-left: 6px solid var(--light-blue);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: var(--mid-blue);
+    }
+
+    ul {
+      margin-left: 20px;
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 15px;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+      background: #e8f4ff;
+      border-radius: 6px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px;
+      border-left: 4px solid var(--mid-blue);
+      margin-top: 5px;
+      background: #f9f9f9;
+    }
+
+    /* Floating Book Now */
+    .floating-book {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--light-blue);
+      color: white;
+      padding: 16px 26px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      border: 3px solid var(--mid-blue);
+      transition: transform 0.2s, background 0.2s;
+      z-index: 9999;
+    }
+
+    .floating-book:hover {
+      background: var(--mid-blue);
+      transform: scale(1.08);
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      border-top: 4px solid var(--light-blue);
+    }
+
+    /* Mobile + shared fixes */
+    *, *::before, *::after { box-sizing: border-box; }
+    img { max-width: 100%; height: auto; }
+    .cta-btn {
+      display: inline-block; background: #ff9900; color: #fff; padding: 14px 28px;
+      font-size: 20px; font-weight: bold; border-radius: 10px; text-decoration: none;
+    }
+    .cta-btn:hover { background: #e68a00; }
+    @media (max-width: 600px) {
+      header { padding: 14px 12px; }
+      header img { width: 110px !important; height: auto; margin-bottom: 4px; }
+      header h1 { font-size: 26px; margin: 6px 0; }
+      nav { padding: 8px 4px; display: flex; flex-wrap: wrap; justify-content: center; }
+      nav a { margin: 4px 10px; font-size: 16px; }
+      .hero { padding: 48px 16px !important; }
+      .hero h1 { font-size: 32px !important; }
+      .hero p { font-size: 18px !important; }
+      .section { margin: 20px 12px !important; padding: 20px 16px !important; }
+      .stats { flex-wrap: wrap; gap: 16px; }
+      .floating-book { bottom: 14px !important; right: 14px !important; padding: 12px 18px !important; font-size: 17px !important; }
+      .calendar td { height: 52px !important; padding: 4px !important; font-size: 14px !important; }
+      .calendar th { padding: 6px 2px !important; font-size: 13px !important; }
+      .banner-cta { font-size: 17px !important; padding: 14px 12px !important; }
+      .vsb-announcement { margin: 20px 12px !important; padding: 20px 14px !important; }
+      .vsb-announcement h2 { font-size: 1.5rem !important; }
+      .vsb-announcement p { font-size: 1.05rem !important; }
+      .booking-container { margin: 12px !important; padding: 18px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap" />
+  <link rel="stylesheet" href="fun.css" />
+  <style>
+    /* What is RC crawling page */
+    .features { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; text-align: center; }
+    .feature-box { width: 220px; padding: 20px; font-size: 18px; }
+    .feature-box span { font-size: 50px; display: block; margin-bottom: 10px; }
+    .lead { font-size: 20px; line-height: 1.6; margin: 0 0 14px; }
+    .lead:last-child { margin-bottom: 0; }
+    .lead strong { color: var(--dark-blue); }
+    .big-photo { width: 100%; max-width: 760px; border-radius: 14px; display: block; margin: 0 auto 10px; }
+    .caption { font-size: 15px; color: #4a5568; text-align: center; margin: 0; }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .compare > div { border-radius: 14px; padding: 18px 20px; }
+    .compare .race { background: #eef2f7; }
+    .compare .crawl { background: #fff8e6; border: 3px solid var(--sun); }
+    .compare h3 { margin: 0 0 8px; }
+    .compare ul { margin: 0; padding-left: 20px; line-height: 1.7; font-size: 18px; }
+    .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+    .steps li { counter-increment: step; position: relative; padding: 4px 0 18px 58px; font-size: 18px; line-height: 1.5; min-height: 42px; }
+    .steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 0;
+      width: 42px; height: 42px; border-radius: 50%; background: var(--orange); color: #fff;
+      font-family: var(--fun-font); font-size: 24px; display: flex; align-items: center; justify-content: center;
+    }
+    .steps li strong { display: block; color: var(--dark-blue); font-size: 20px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 10px; }
+    .cta-btn.alt { background: var(--mid-blue) !important; box-shadow: 0 4px 0 #0d3b66 !important; }
+    @media (max-width: 600px) {
+      .lead { font-size: 18px; }
+      .compare { grid-template-columns: 1fr; }
+      .steps li { font-size: 17px; padding-left: 52px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.jpg" width="200" height="185" alt="VSB Entertainment Logo">
+  <h1>What Is RC Crawling?</h1>
+  <p>🚙 A parent’s guide to the slow, clever, rock-climbing kind of fun</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="what-is-rc-crawling.html">What’s RC Crawling?</a>
+  <a href="parties.html">Parties</a>
+  <a href="camps.html">Camps</a>
+  <a href="events.html">Events</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- THE SHORT ANSWER -->
+<div class="section">
+  <h2>The Short Answer 🙌</h2>
+  <p class="lead">
+    <strong>RC stands for remote control</strong> (you’ll also hear “radio-controlled”).
+    <strong>RC rock crawling</strong> is an off-road hobby where small remote control trucks climb
+    over steep rocks, dirt trails and obstacle courses.
+  </p>
+  <p class="lead">
+    Kids drive them <strong>slowly and carefully</strong> up hills, across bridges and through tunnels.
+    It’s all about skill and steady hands, not speed, so every kid can do it and nobody gets left behind.
+  </p>
+</div>
+
+<!-- PHOTO -->
+<div class="section">
+  <img class="big-photo" src="3A57AD8C-6D25-4BF1-9F01-AA49A20C0992_1_105_c.jpeg" width="1024" height="768" loading="lazy"
+       alt="Two RC crawler trucks with their headlights on, climbing a rocky course and a wooden log bridge">
+  <p class="caption">Two of our trucks on one of our courses: a log bridge over the rocks.</p>
+</div>
+
+<!-- CRAWLING VS RACING -->
+<div class="section">
+  <h2>Crawling, Not Racing 🐢</h2>
+  <p>Most people picture RC cars zooming around a parking lot. Crawling is the opposite, and that’s what makes it great for kids.</p>
+  <div class="compare">
+    <div class="race">
+      <h3>🏎️ RC racing</h3>
+      <ul>
+        <li>Go as fast as you can</li>
+        <li>Quick reflexes win</li>
+        <li>Crashes end the fun fast</li>
+      </ul>
+    </div>
+    <div class="crawl">
+      <h3>🚙 RC crawling</h3>
+      <ul>
+        <li>Go slow and steady</li>
+        <li>Plan your path, pick your line</li>
+        <li>Stuck? Back up and try again!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT MAKES A CRAWLER SPECIAL -->
+<div class="section">
+  <h2>What Makes a Crawler Special? 🔧</h2>
+  <p>A crawler isn’t a toy car. It’s a hobby-grade truck built to climb. Here’s the secret sauce, in plain words:</p>
+  <div class="features">
+    <div class="feature-box">
+      <span>⚙️</span>
+      Locked Axles
+      <small>All the wheels turn together, so the truck keeps its grip on slippery rocks.</small>
+    </div>
+    <div class="feature-box">
+      <span>🦘</span>
+      Bendy Suspension
+      <small>The axles twist way up and down, so all four tires stay on the bumpy ground.</small>
+    </div>
+    <div class="feature-box">
+      <span>⚖️</span>
+      Low &amp; Heavy
+      <small>Weight sits low and up front, so the truck doesn’t tip over on steep climbs.</small>
+    </div>
+    <div class="feature-box">
+      <span>🪨</span>
+      Real Terrain
+      <small>Rocks, dirt, ramps, bridges and tunnels make every run a little puzzle.</small>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT HAPPENS AT A VSB CRAWL -->
+<div class="section">
+  <h2>What Happens at a VSB Crawl? 🎉</h2>
+  <ol class="steps">
+    <li><strong>We roll up and build the course</strong>Obstacle courses and a fleet of trucks, set up in your yard, driveway, gym, park or open indoor space.</li>
+    <li><strong>Everyone learns to drive</strong>We show the kids how the controls work and keep everything safe. No experience needed.</li>
+    <li><strong>Kids take turns on the courses</strong>Courses run from easy to expert, from smooth lanes and gentle hills up to rock gardens and narrow bridges.</li>
+    <li><strong>Cheering, challenges and big smiles</strong>Kids help each other find a way up, celebrate every climb, and beg to go again.</li>
+  </ol>
+</div>
+
+<!-- WHY PARENTS LOVE IT -->
+<div class="section">
+  <h2>Why Parents Love It 💙</h2>
+  <ul style="font-size:18px;line-height:1.8;margin:0;">
+    <li>📵 <strong>Screen-free</strong> and hands-on</li>
+    <li>🧠 Builds <strong>patience, problem-solving and coordination</strong></li>
+    <li>🤝 Kids <strong>work together</strong> and cheer each other on</li>
+    <li>🧒 Great for <strong>ages 6–14</strong>, and fun for all ages</li>
+    <li>🚑 Run by a local <strong>first responder / EMT</strong>, and we supervise the whole event</li>
+  </ul>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <h2>Quick Questions 🙋</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">Does my child need to have driven an RC truck before?</div>
+    <div class="faq-answer">Nope! We teach everyone the basics, and the beginner course is made for brand-new drivers.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Do we need our own trucks?</div>
+    <div class="faq-answer">No. We bring multiple high-quality RC crawlers for all skill levels, plus the courses.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Is it hard?</div>
+    <div class="faq-answer">It’s easy to start and fun to get better at. Going slow is the whole idea, so younger kids do great.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">How much space do you need?</div>
+    <div class="faq-answer">A driveway, gym, field, basement, or open indoor space works great.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="section" style="text-align:center;">
+  <h2>Ready to Give It a Try? 🚙💨</h2>
+  <p>Bring RC crawling to a birthday party, camp or school anywhere in Bucks &amp; Montgomery County, PA.</p>
+  <div class="cta-row">
+    <a class="cta-btn" href="booking.html">Pick My Date!</a>
+    <a class="cta-btn alt" href="parties.html">See Birthday Parties</a>
+    <a class="cta-btn alt" href="camps.html">See Camp Programs</a>
+  </div>
+</div>
+
+<!-- FLOATING BUTTON -->
+<a class="floating-book" href="booking.html">🚙 Book the Fun!</a>
+
+<footer>
+  <span class="tagline">Crawl. Climb. Conquer! 🚙</span>
+  © 2026 VSB Entertainment — RC Crawling Parties &amp; Camps<br>
+  Serving Bucks &amp; Montgomery County, PA • <a href="mailto:vsb_crawling@yahoo.com" style="color:white;">vsb_crawling@yahoo.com</a>
+</footer>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
+
+<script data-goatcounter="https://vsbcrawling.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
