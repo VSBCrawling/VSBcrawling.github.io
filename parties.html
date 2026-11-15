@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RC Crawling Birthday Parties in Bucks & Montgomery County, PA | VSB</title>
-  <meta name="description" content="A 2-hour RC crawling birthday party at your home, park or gym. Multiple RC trucks, full obstacle course, ages 6-14. $300 base package. Serving Bucks & Montgomery County, PA." />
+  <meta name="description" content="A 2-hour RC crawling birthday party at your home, park or gym. Multiple RC trucks, full obstacle course, ages 6-14. Packages from $300. Serving Bucks & Montgomery County, PA." />
   <link rel="canonical" href="https://vsbcrawling.github.io/parties.html" />
   <link rel="icon" href="logo-192.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VSB Entertainment" />
   <meta property="og:title" content="RC Crawling Birthday Parties in Bucks & Montgomery County, PA | VSB" />
-  <meta property="og:description" content="A 2-hour RC crawling birthday party at your home, park or gym. Multiple RC trucks, full obstacle course, ages 6-14. $300 base package. Serving Bucks & Montgomery County, PA." />
+  <meta property="og:description" content="A 2-hour RC crawling birthday party at your home, park or gym. Multiple RC trucks, full obstacle course, ages 6-14. Packages from $300. Serving Bucks & Montgomery County, PA." />
   <meta property="og:url" content="https://vsbcrawling.github.io/parties.html" />
   <meta property="og:image" content="https://vsbcrawling.github.io/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -169,6 +169,16 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
+    .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 18px; }
+    .pkg { position: relative; background: #fff; border: 3px solid #dbe8f7; border-radius: 16px; padding: 22px 18px; text-align: center; display: flex; flex-direction: column; }
+    .pkg-popular { border-color: var(--orange); box-shadow: 0 6px 18px rgba(255,122,0,.18); }
+    .pkg-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--orange); color: #fff; font-weight: bold; font-size: 14px; padding: 4px 14px; border-radius: 999px; white-space: nowrap; }
+    .pkg-name { font-family: var(--fun-font); font-size: 26px; color: var(--dark-blue); }
+    .pkg-price { font-family: var(--fun-font); font-size: 44px; line-height: 1.1; color: var(--orange); }
+    .pkg-meta { font-weight: bold; color: var(--mid-blue); margin-bottom: 8px; }
+    .pkg ul { text-align: left; flex: 1; margin: 8px 0 16px; }
+    .pkg .cta-btn { align-self: center; }
+    .pkg-note { text-align: center; margin-top: 18px; }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -216,25 +226,56 @@
     Make your child’s birthday unforgettable with a high‑energy, hands‑on RC crawling experience. 
     We bring the excitement directly to you with professional equipment, multiple RC vehicles, 
     and a full obstacle course setup that keeps kids engaged from start to finish.
-  </p>
+  </p>  <img src="media/truck-lineup.jpg" alt="The VSB fleet of RC crawler trucks with their controllers" loading="lazy" decoding="async" style="display:block;width:100%;max-width:720px;margin:16px auto 0;border-radius:14px;">
 </div>
 
 <!-- PRICING -->
 <div class="section">
-  <h2>Party Package &amp; Pricing 💸</h2>
+  <h2>Party Packages &amp; Pricing 💸</h2>
+  <p>Every party comes to you with our trucks, our obstacle course, and our crew running the whole thing. All packages are for groups of under 20 kids. Pick the length that fits your party.</p>
 
-  <p><strong>Base Package — $300</strong></p>
-  <ul>
-    <li>2 hours of RC crawling fun</li>
-    <li>Full obstacle course setup</li>
-    <li>Access to multiple RC vehicles</li>
-    <li>Beginner + advanced course options</li>
-  </ul>
+  <div class="pkg-grid">
+    <div class="pkg">
+      <div class="pkg-name">Trail Crawler</div>
+      <div class="pkg-price">$300</div>
+      <div class="pkg-meta">2 hours</div>
+      <ul>
+        <li>Full obstacle course setup</li>
+        <li>Multiple RC trucks, kids take turns</li>
+        <li>Beginner + advanced courses</li>
+        <li>We run and supervise everything</li>
+      </ul>
+      <a class="cta-btn" href="booking.html?package=Trail%20Crawler">Book Trail Crawler</a>
+    </div>
 
-  <p><strong>Additional Time</strong></p>
-  <ul>
-    <li>Extend the fun with 30‑minute increments for <strong>$70 each</strong></li>
-  </ul>
+    <div class="pkg pkg-popular">
+      <div class="pkg-badge">Most Popular</div>
+      <div class="pkg-name">Rock Climber</div>
+      <div class="pkg-price">$370</div>
+      <div class="pkg-meta">2½ hours</div>
+      <ul>
+        <li>Everything in Trail Crawler</li>
+        <li>Extra 30 minutes of drive time</li>
+        <li>Timed challenge run: who can conquer the course fastest?</li>
+      </ul>
+      <a class="cta-btn" href="booking.html?package=Rock%20Climber">Book Rock Climber</a>
+    </div>
+
+    <div class="pkg">
+      <div class="pkg-name">Summit King</div>
+      <div class="pkg-price">$440</div>
+      <div class="pkg-meta">3 hours</div>
+      <ul>
+        <li>Everything in Rock Climber</li>
+        <li>A full hour more than Trail Crawler</li>
+        <li>Most drive time for every kid</li>
+        <li>Best for bigger groups or longer parties</li>
+      </ul>
+      <a class="cta-btn" href="booking.html?package=Summit%20King">Book Summit King</a>
+    </div>
+  </div>
+
+  <p class="pkg-note">Need more time? Add 30 minutes to any package for <strong>$70</strong>.</p>
 </div>
 
 <!-- HIGHLIGHTS -->
@@ -275,7 +316,7 @@
 
   <div class="faq-item">
     <div class="faq-question">How many kids can participate?</div>
-    <div class="faq-answer">We can comfortably handle groups of 8–20 kids with rotations.</div>
+    <div class="faq-answer">Groups of under 20 kids work best, with everyone taking turns driving.</div>
   </div>
 
   <div class="faq-item">
