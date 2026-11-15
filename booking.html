@@ -250,6 +250,14 @@
         <option>Private Rental</option>
       </select>
 
+      <label for="package">Party Package (if booking a party)</label>
+      <select id="package" name="package">
+        <option value="">Not sure yet</option>
+        <option>Trail Crawler (2 hrs, $300)</option>
+        <option>Rock Climber (2.5 hrs, $370)</option>
+        <option>Summit King (3 hrs, $440)</option>
+      </select>
+
       <label for="location">Event Town / Location</label>
       <input type="text" id="location" name="location" placeholder="e.g. Doylestown, home driveway" required>
 
@@ -282,6 +290,16 @@
       dateInput.value = us ? `${us[3]}-${us[1].padStart(2,"0")}-${us[2].padStart(2,"0")}` : d;
     }
 
+    // Preselect a party package when coming from the Parties page (?package=Name)
+    const pkg = new URLSearchParams(location.search).get("package");
+    if (pkg) {
+      const opt = [...document.querySelectorAll("#package option")].find(o => o.text.startsWith(pkg));
+      if (opt) {
+        document.getElementById("package").value = opt.value || opt.text;
+        document.getElementById("eventType").value = "Birthday Party";
+      }
+    }
+
     // Build an email with the booking details and open the visitor's email app
     document.getElementById("bookingForm").addEventListener("submit", (e) => {
       e.preventDefault();
@@ -292,6 +310,7 @@
         "",
         "Event date: " + v("eventDate"),
         "Event type: " + v("eventType"),
+        "Package: " + (v("package") || "not sure yet"),
         "Location: " + v("location"),
         "Number of kids: " + (v("kids") || "not sure yet"),
         "",
