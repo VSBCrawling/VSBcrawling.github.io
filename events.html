@@ -276,6 +276,9 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
+    .upcoming ul { padding-left: 20px; margin: 10px 0 14px; }
+    .upcoming li { margin-bottom: 10px; line-height: 1.5; font-size: 17px; }
+    .cal-hint { text-align: center; color: #444; font-size: 16px; margin: 0 0 14px; }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -288,7 +291,7 @@
 <header>
   <img src="logo.jpg" width="200" height="185" alt="VSB Entertainment Logo">
   <h1>Community Events</h1>
-  <p>RC Crawling • Fundraisers • Community Programs</p>
+  <p>RC Crawling • Farmers Markets • Fundraisers • Community Programs</p>
 </header>
 
 <nav>
@@ -302,7 +305,7 @@
 </nav>
 
 <!-- ⭐ NEW UPCOMING EVENTS BANNER -->
-<div class="banner-cta" style="
+<div id="warringtonBanner" class="banner-cta" style="
   background: #3282b8;
   color: white;
   padding: 18px;
@@ -320,7 +323,15 @@
   <a href="booking.html">Click here to reserve your date</a>
 </div>
 
+<div class="section upcoming">
+  <h2>Upcoming Events 📅</h2>
+  <ul id="upcomingList"></ul>
+  <p>We also bring the courses to <strong>farmers markets, fundraisers and community events</strong>. Want us at yours? <a href="booking.html">Tell us about it</a>.</p>
+</div>
+
 <div class="section">
+
+  <p class="cal-hint">Highlighted days are events: tap one for details. Tap any open day to request that date for your party or event.</p>
 
   <div class="nav-buttons">
     <button onclick="prevWindow()">◀ Previous</button>
@@ -340,9 +351,20 @@
 </div>
 
 <a class="floating-book" href="booking.html">🚙 Book the Fun!</a>
+<script>
+  // Show the floating Book button only after the visitor scrolls past the top of the page (so it never covers the opening text)
+  (function () {
+    var b = document.querySelector(".floating-book");
+    if (!b) return;
+    function upd() { b.classList.toggle("fb-hide", window.scrollY < 250); }
+    upd(); window.addEventListener("scroll", upd, { passive: true });
+  })();
+</script>
 
 <footer>
-  © 2026 VSB Entertainment — RC Crawling • Parties • Camps • Events
+  <span class="tagline">Crawl. Climb. Conquer! 🚙</span>
+  © 2026 VSB Entertainment — RC Crawling Parties, Camps &amp; Events<br>
+  Serving Bucks &amp; Montgomery County, PA • <a href="mailto:vsb_crawling@yahoo.com" style="color:white;">vsb_crawling@yahoo.com</a> • <a href="https://www.facebook.com/share/1KHKme5Yqi/" target="_blank" rel="noopener" style="color:white;">Facebook</a>
 </footer>
 
 <div class="event-popup" id="eventPopup">
@@ -362,13 +384,8 @@
     {
       date: "2026-11-19",
       title: "RC Crawling Class with Warrington Township",
-      description: "RC crawling class held with Warrington Township, PA. Register through Warrington Township Parks & Rec.",
+      description: "In Warrington, PA. Register through Warrington Township Parks & Rec.",
       link: "https://warringtonpa.myrec.com/info/activities/program_details.aspx?ProgramID=30160"
-    },
-    {
-      date: "2026-09-16",
-      title: "STEM RC Crawl Lab Class",
-      description: "Located in Warrington PA — stay tuned for class details"
     }
   ];
 
@@ -488,6 +505,34 @@
   }
 
   renderWindow();
+
+  // Upcoming events list (only future events), and hide the Warrington banner after the class
+  (function () {
+    const today = new Date(); today.setHours(0,0,0,0);
+    const toDate = (d) => { const [y,m,dd] = d.split("-").map(Number); return new Date(y, m-1, dd); };
+    const list = document.getElementById("upcomingList");
+    const upcoming = events.filter(e => toDate(e.date) >= today).sort((a,b) => a.date.localeCompare(b.date));
+    if (!upcoming.length) {
+      list.innerHTML = '<li>No public events posted right now. Check back soon, or follow us on <a href="https://www.facebook.com/share/1KHKme5Yqi/" target="_blank" rel="noopener">Facebook</a>.</li>';
+    }
+    upcoming.forEach(e => {
+      const li = document.createElement("li");
+      const when = document.createElement("strong");
+      when.textContent = toDate(e.date).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }) + ": ";
+      li.appendChild(when);
+      li.appendChild(document.createTextNode(e.title + ". " + e.description + " "));
+      if (e.link) {
+        const a = document.createElement("a");
+        a.href = e.link; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Sign up";
+        li.appendChild(a);
+      }
+      list.appendChild(li);
+    });
+    if (today > toDate("2026-11-19")) {
+      const b = document.getElementById("warringtonBanner");
+      if (b) b.remove();
+    }
+  })();
 </script>
 
 <script data-goatcounter="https://vsbcrawling.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

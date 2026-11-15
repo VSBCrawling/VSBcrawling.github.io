@@ -102,6 +102,8 @@ nav a:hover, nav a:focus-visible {
   border: 3px solid #fff !important;
 }
 .floating-book:hover { background: var(--orange-dark) !important; }
+.floating-book { transition: opacity .25s, transform .25s; }
+.floating-book.fb-hide { opacity: 0; transform: translateY(20px); pointer-events: none; }
 
 /* ---------- SECTIONS ---------- */
 .section {
@@ -157,6 +159,7 @@ body > h2 { font-family: var(--fun-font); color: var(--dark-blue) !important; }
 
 /* ---------- FOOTER ---------- */
 footer {
+  color: #fff; text-align: center; padding: 20px 16px 70px; line-height: 1.6;
   background: #0d3b66 !important;
   border-top: 5px solid var(--sun) !important;
 }
@@ -174,6 +177,8 @@ footer .tagline { font-family: var(--fun-font); font-size: 20px; display: block;
   .stat { font-size: 38px !important; }
   .feature-box { width: calc(50% - 10px) !important; padding: 14px 8px !important; font-size: 16px !important; }
   .feature-box span { font-size: 40px !important; }
+  /* Smaller floating button so it doesn't cover words on phones */
+  body .floating-book { bottom: 10px !important; right: 10px !important; padding: 8px 14px !important; font-size: 15px !important; border-width: 2px !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
