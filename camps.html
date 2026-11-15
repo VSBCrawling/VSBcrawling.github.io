@@ -230,6 +230,7 @@
 
   <h3>What Camps Love Most</h3>
   <ul>
+    <li><strong>Big groups welcome:</strong> we handle groups of 100–120 campers, broken into age groups</li>
     <li>We run the entire program — your staff can relax</li>
     <li>7 RC trucks keep rotations moving quickly</li>
     <li>Hands‑on instruction ensures safety and smooth flow</li>
@@ -251,22 +252,31 @@
   <p>Here are some real moments from our RC crawling camp experiences — obstacle challenges, teamwork, and high‑energy fun.</p>
 
   <div class="camp-grid">
-    <img src="media/course-school-gym.jpg" alt="Campers driving RC crawlers on an obstacle course — photo 1" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
-    <img src="05F6E8CA-CB3A-4DBC-BC70-E9CD91392181_4_5005_c.jpeg" alt="Campers driving RC crawlers on an obstacle course — photo 2" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
-    <img src="80BC006E-2D27-4BD6-81DC-3A6FFD432FB8_4_5005_c.jpeg" alt="Campers driving RC crawlers on an obstacle course — photo 3" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
-    <img src="422B57DE-A2F4-4555-865F-F19A4B077EF4_4_5005_c.jpeg" alt="Campers driving RC crawlers on an obstacle course — photo 4" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
-    <img src="561A3747-6D0B-4FB1-B121-62EF8AFEA0F9_4_5005_c.jpeg" alt="Campers driving RC crawlers on an obstacle course — photo 5" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
-    <img src="7E16D234-F942-4194-84F8-322DEDD753B5_4_5005_c.jpeg" alt="Campers driving RC crawlers on an obstacle course — photo 6" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+    <img src="media/course-school-gym.jpg" alt="Full RC crawling obstacle course set up in a school gym" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+    <img src="media/kids-castle-course.jpg" alt="Kids driving an RC crawler up the castle obstacle course (faces blurred)" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+    <img src="media/course-mountain-bridges.jpg" alt="Mountain course with rope bridges, RC trucks and controllers" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+    <img src="422B57DE-A2F4-4555-865F-F19A4B077EF4_4_5005_c.jpeg" alt="RC crawlers on the pegboard ramp and bridge course" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+    <img src="media/kids-pegboard-course.jpg" alt="Campers driving RC crawlers on the pegboard obstacle course" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
+    <img src="7E16D234-F942-4194-84F8-322DEDD753B5_4_5005_c.jpeg" alt="Rock mountain obstacle course with RC crawlers" loading="lazy" decoding="async" onclick="openLightbox(this.src)">
   </div>
 </div>
 
 <div class="section" style="text-align:center;">
   <h2>Bring the Fun to Your Camp! 🚙💨</h2>
-  <p>Summer camps, STEM weeks, schools and community programs across Bucks &amp; Montgomery County, PA. Dates fill quickly, so reach out early.</p>
+  <p>Summer camps, STEM weeks, schools and community programs across Bucks &amp; Montgomery County, PA. We take groups of 100–120 campers, split into age groups. Dates fill quickly, so reach out early.</p>
   <a class="cta-btn" href="booking.html">Request a Camp Date</a>
 </div>
 
 <a class="floating-book" href="booking.html">🚙 Book the Fun!</a>
+<script>
+  // Show the floating Book button only after the visitor scrolls past the top of the page (so it never covers the opening text)
+  (function () {
+    var b = document.querySelector(".floating-book");
+    if (!b) return;
+    function upd() { b.classList.toggle("fb-hide", window.scrollY < 250); }
+    upd(); window.addEventListener("scroll", upd, { passive: true });
+  })();
+</script>
 
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
@@ -274,7 +284,9 @@
 </div>
 
 <footer>
-  © 2026 VSB Entertainment — RC Crawling • Parties • Camps • Events
+  <span class="tagline">Crawl. Climb. Conquer! 🚙</span>
+  © 2026 VSB Entertainment — RC Crawling Parties, Camps &amp; Events<br>
+  Serving Bucks &amp; Montgomery County, PA • <a href="mailto:vsb_crawling@yahoo.com" style="color:white;">vsb_crawling@yahoo.com</a> • <a href="https://www.facebook.com/share/1KHKme5Yqi/" target="_blank" rel="noopener" style="color:white;">Facebook</a>
 </footer>
 
 <script>

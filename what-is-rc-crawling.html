@@ -335,7 +335,7 @@
   <h2>Scouts, Clubs &amp; Groups Welcome ⚜️</h2>
   <p style="font-size:19px;line-height:1.6;max-width:760px;margin:0 auto 18px;">
     It’s not just birthdays! We also bring RC crawling to <strong>Boy Scout and Girl Scout troops</strong>,
-    youth clubs, schools, camps and community groups. Tell us about your group and we’ll plan a session that fits.
+    youth clubs, schools, camps, farmers markets and community events. Tell us about your group and we’ll plan a session that fits.
   </p>
   <a class="cta-btn" href="booking.html">Book a Group Session</a>
 </div>
@@ -402,11 +402,20 @@
 
 <!-- FLOATING BUTTON -->
 <a class="floating-book" href="booking.html">🚙 Book the Fun!</a>
+<script>
+  // Show the floating Book button only after the visitor scrolls past the top of the page (so it never covers the opening text)
+  (function () {
+    var b = document.querySelector(".floating-book");
+    if (!b) return;
+    function upd() { b.classList.toggle("fb-hide", window.scrollY < 250); }
+    upd(); window.addEventListener("scroll", upd, { passive: true });
+  })();
+</script>
 
 <footer>
   <span class="tagline">Crawl. Climb. Conquer! 🚙</span>
-  © 2026 VSB Entertainment — RC Crawling Parties &amp; Camps<br>
-  Serving Bucks &amp; Montgomery County, PA • <a href="mailto:vsb_crawling@yahoo.com" style="color:white;">vsb_crawling@yahoo.com</a>
+  © 2026 VSB Entertainment — RC Crawling Parties, Camps &amp; Events<br>
+  Serving Bucks &amp; Montgomery County, PA • <a href="mailto:vsb_crawling@yahoo.com" style="color:white;">vsb_crawling@yahoo.com</a> • <a href="https://www.facebook.com/share/1KHKme5Yqi/" target="_blank" rel="noopener" style="color:white;">Facebook</a>
 </footer>
 
 <script>

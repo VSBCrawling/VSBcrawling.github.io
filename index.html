@@ -303,6 +303,8 @@
     <li>🎂 Birthday parties from $300</li>
     <li>🏕️ Camps</li>
     <li>🔬 School STEM events</li>
+    <li>⚜️ Scouts &amp; groups</li>
+    <li>🧺 Farmers markets</li>
   </ul>
   <a href="booking.html">🎉 Grab Your Party Date!</a>
 </div>
@@ -386,7 +388,7 @@
 
 <div class="section" style="text-align:center;">
   <h2>Let’s Get This Party Rolling! 🚙💨</h2>
-  <p>Birthday parties start at <strong>$300 for 2 hours</strong>. Camps, schools and community groups: ask us about a custom program.</p>
+  <p>Birthday parties start at <strong>$300 for 2 hours</strong>. Camps, schools, Scout troops, farmers markets and community events: ask us about a custom program.</p>
   <a class="cta-btn" href="booking.html">Pick My Date!</a>
   <p style="margin-top:14px;">Questions? Email <a href="mailto:vsb_crawling@yahoo.com">vsb_crawling@yahoo.com</a></p>
 </div>
@@ -430,11 +432,20 @@
 
 <!-- FLOATING BUTTON -->
 <a class="floating-book" href="booking.html">🚙 Book the Fun!</a>
+<script>
+  // Show the floating Book button only after the visitor scrolls past the top of the page (so it never covers the opening text)
+  (function () {
+    var b = document.querySelector(".floating-book");
+    if (!b) return;
+    function upd() { b.classList.toggle("fb-hide", window.scrollY < 250); }
+    upd(); window.addEventListener("scroll", upd, { passive: true });
+  })();
+</script>
 
 <footer>
   <span class="tagline">Crawl. Climb. Conquer! 🚙</span>
-  © 2026 VSB Entertainment — RC Crawling Parties &amp; Camps<br>
-  Serving Bucks &amp; Montgomery County, PA • <a href="mailto:vsb_crawling@yahoo.com" style="color:white;">vsb_crawling@yahoo.com</a>
+  © 2026 VSB Entertainment — RC Crawling Parties, Camps &amp; Events<br>
+  Serving Bucks &amp; Montgomery County, PA • <a href="mailto:vsb_crawling@yahoo.com" style="color:white;">vsb_crawling@yahoo.com</a> • <a href="https://www.facebook.com/share/1KHKme5Yqi/" target="_blank" rel="noopener" style="color:white;">Facebook</a>
 </footer>
 
 <script>
