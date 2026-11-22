@@ -314,7 +314,7 @@
   font-weight: bold;
   border-bottom: 4px solid #0f4c75;
 ">
-  Upcoming: RC Crawling Class with Warrington Township on Thursday, November 19! <a href="https://warringtonpa.myrec.com/info/activities/program_details.aspx?ProgramID=30160" target="_blank" rel="noopener">Sign up here</a><br>
+  Coming in January: a new RC Crawling Class date with Warrington Township! Stay tuned.<br>
   <span style="font-size:16px;font-weight:normal;">Also now booking winter birthday parties and 2027 summer camps.</span>
 </div>
 
@@ -506,7 +506,7 @@
 
   renderWindow();
 
-  // Upcoming events list (only future events), and hide the Warrington banner after the class
+  // Upcoming events list (only future events)
   (function () {
     const today = new Date(); today.setHours(0,0,0,0);
     const toDate = (d) => { const [y,m,dd] = d.split("-").map(Number); return new Date(y, m-1, dd); };
@@ -528,10 +528,6 @@
       }
       list.appendChild(li);
     });
-    if (today > toDate("2026-11-19")) {
-      const b = document.getElementById("warringtonBanner");
-      if (b) b.remove();
-    }
   })();
 </script>
 

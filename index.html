@@ -269,22 +269,22 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
-    .nov19-signup {
+    .class-banner {
       background: #ff9900; color: #fff; text-align: center; padding: 22px 16px 24px;
       border-bottom: 4px solid #e68a00;
     }
-    .nov19-signup p { margin: 0 0 8px; }
-    .nov19-kicker { font-size: 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-    .nov19-title { font-family: 'Baloo 2', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; }
-    .nov19-sub { font-size: 17px; }
-    .nov19-btn {
+    .class-banner p { margin: 0 0 8px; }
+    .class-banner-kicker { font-size: 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    .class-banner-title { font-family: 'Baloo 2', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; }
+    .class-banner-sub { font-size: 17px; }
+    .class-banner-btn {
       display: inline-block; margin-top: 6px; background: #0a2a43; color: #fff; padding: 14px 32px;
       font-size: 20px; font-weight: bold; border-radius: 10px; text-decoration: none;
     }
-    .nov19-btn:hover { background: #0f4c75; }
+    .class-banner-btn:hover { background: #0f4c75; }
     @media (max-width: 600px) {
-      .nov19-title { font-size: 23px; }
-      .nov19-btn { display: block; max-width: 320px; margin: 8px auto 0; }
+      .class-banner-title { font-size: 23px; }
+      .class-banner-btn { display: block; max-width: 320px; margin: 8px auto 0; }
     }
     .home-video { display: block; width: auto; max-width: 100%; max-height: 520px; margin: 0 auto 20px; border-radius: 14px; background: #000; }
   </style>
@@ -312,21 +312,13 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- NOV 19 WARRINGTON CLASS SIGN-UP (hides itself after Nov 19, Eastern time) -->
-<div id="nov19Signup" class="nov19-signup">
-  <p class="nov19-kicker">📅 Upcoming class</p>
-  <p class="nov19-title">RC Crawling Class with Warrington Township<br>Thursday, November 19</p>
-  <p class="nov19-sub">Register through Warrington Township Parks &amp; Rec.</p>
-  <a class="nov19-btn" href="https://warringtonpa.myrec.com/info/activities/program_details.aspx?ProgramID=30160" target="_blank" rel="noopener">Sign Up Now</a>
+<!-- JANUARY WARRINGTON CLASS ANNOUNCEMENT -->
+<div id="janWarrington" class="class-banner">
+  <p class="class-banner-kicker">📅 Coming in January</p>
+  <p class="class-banner-title">New RC Crawling Class Date with Warrington Township!</p>
+  <p class="class-banner-sub">We're adding a new date in January. Stay tuned!</p>
+  <a class="class-banner-btn" href="https://www.facebook.com/share/1KHKme5Yqi/" target="_blank" rel="noopener">Follow Us for the Date</a>
 </div>
-<script>
-  (function () {
-    var today;
-    try { today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
-    catch (e) { var d = new Date(); today = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
-    if (today > "2026-11-19") { var b = document.getElementById("nov19Signup"); if (b) b.remove(); }
-  })();
-</script>
 
 <!-- HERO -->
 <div class="hero">
